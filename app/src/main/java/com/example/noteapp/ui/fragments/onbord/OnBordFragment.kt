@@ -36,7 +36,6 @@ class OnBordFragment : Fragment() {
         binding.viewPager.adapter = OnBordViewPagerAdapter(this@OnBordFragment)
         clickText()
     }
-    //aniem
 
     private fun setOnClickListeners() = with(binding.viewPager) {
         binding.text1.setOnClickListener {
