@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/onBordFragment">
+
+    <fragment
+        android:id="@+id/onBordFragment"
+        android:name="com.example.noteapp.ui.fragments.onbord.OnBordFragment"
+        android:label="OnBordFragment" >
+        <action
+            android:id="@+id/action_onBordFragment_to_firstFragment2"
+            app:destination="@id/firstFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/onBordSecondFragment"
+        android:name="com.example.noteapp.ui.fragments.onbord.OnBordPagingFragment"
+        android:label="OnBordSecondFragment" >
+
+    </fragment>
+    <fragment
+        android:id="@+id/firstFragment"
+        android:name="com.example.noteapp.ui.fragments.onbord.FirstFragment"
+        android:label="fragment_first"
+        tools:layout="@layout/fragment_first" />
+</navigation>
