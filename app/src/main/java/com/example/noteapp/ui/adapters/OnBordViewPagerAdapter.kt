@@ -7,9 +7,9 @@ import com.example.noteapp.ui.fragments.onbord.OnBordPagingFragment
 import com.example.noteapp.ui.fragments.onbord.OnBordPagingFragment.Companion.ARG_ONBOARD_POSITION
 
 class OnBordViewPagerAdapter(
-
     fragment: Fragment
 ) : FragmentStateAdapter(fragment) {
+
     override fun getItemCount(): Int {
         return 3
     }

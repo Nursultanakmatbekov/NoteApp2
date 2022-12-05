@@ -1,4 +1,4 @@
-package com.example.noteapp.ui.fragments.onbord
+package com.example.noteapp.ui.fragments.NoteFragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.noteapp.R
 
-class FirstFragment : Fragment() {
+class NoteFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
