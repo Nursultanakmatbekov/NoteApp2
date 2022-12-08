@@ -10,6 +10,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.noteapp.R
 import com.example.noteapp.databinding.FragmentOnBordPagingBinding
 
+
 class OnBordPagingFragment : Fragment() {
 
     private lateinit var binding: FragmentOnBordPagingBinding
@@ -20,7 +21,6 @@ class OnBordPagingFragment : Fragment() {
     ): View {
         binding = FragmentOnBordPagingBinding.inflate(inflater, container, false)
         return binding.root
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -34,29 +34,29 @@ class OnBordPagingFragment : Fragment() {
             0 -> {
                 text2.text = "Очень удобный функционал"
                 lottieFirst.setAnimation(R.raw.lottie1)
-                binding.text3.text = ""
-                binding.text3.isVisible = false
+                text3.text = ""
+                text3.isVisible = false
             }
             1 -> {
                 text2.text = "Быстрый, качественый продукт"
                 lottieFirst.setAnimation(R.raw.lottie2)
                 imageRectangle.isVisible = false
-                binding.text3.text = ""
-                binding.text3.isVisible = false
+                text3.text = ""
+                text3.isVisible = false
             }
             2 -> {
                 text2.text = "Куча функции и интересных фишек"
                 lottieFirst.setAnimation(R.raw.lottie3)
                 imageRectangle.isVisible = false
-                binding.text3.text = "Начать работу"
-                binding.text3.isVisible = true
+                text3.text = "Начать работу"
+                text3.isVisible = true
             }
         }
     }
 
-    private fun textSetOnClick() {
-        binding.text3.setOnClickListener {
-            findNavController().navigate(R.id.action_onBordFragment_to_firstFragment2)
+    private fun textSetOnClick() = with(binding) {
+        text3.setOnClickListener {
+            findNavController().navigate(R.id.action_onBordFragment_to_firstFragment)
         }
     }
 

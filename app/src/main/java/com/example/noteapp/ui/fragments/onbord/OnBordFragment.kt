@@ -6,9 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.example.noteapp.databinding.FragmentOnBordBinding
 import com.example.noteapp.ui.adapters.OnBordViewPagerAdapter
+import com.example.noteapp.utils.PreferenceHelper
 import com.google.android.material.tabs.TabLayoutMediator
 
 class OnBordFragment : Fragment() {
@@ -28,8 +30,8 @@ class OnBordFragment : Fragment() {
         initialize()
         setOnClickListeners()
         TabLayoutMediator(binding.tabLayout, binding.viewPager) { it, it2 ->
-            //Some implementation
         }.attach()
+        noteFragment()
     }
 
     private fun initialize() {
@@ -62,5 +64,13 @@ class OnBordFragment : Fragment() {
                 super.onPageSelected(position)
             }
         })
+    }
+
+    private fun noteFragment() {
+        if (PreferenceHelper.isShow) {
+            findNavController().navigateUp()
+        } else {
+            PreferenceHelper.isShow = true
+        }
     }
 }

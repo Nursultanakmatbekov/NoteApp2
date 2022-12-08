@@ -3,15 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/onBordFragment">
+    app:startDestination="@id/firstFragment">
 
     <fragment
         android:id="@+id/onBordFragment"
         android:name="com.example.noteapp.ui.fragments.onbord.OnBordFragment"
         android:label="OnBordFragment" >
         <action
-            android:id="@+id/action_onBordFragment_to_firstFragment2"
-            app:destination="@id/firstFragment" />
+            android:id="@+id/action_onBordFragment_to_firstFragment"
+            app:destination="@id/firstFragment"
+            app:popUpTo="@id/firstFragment"
+            app:popUpToInclusive="true"/>
     </fragment>
     <fragment
         android:id="@+id/onBordSecondFragment"
@@ -23,5 +25,5 @@
         android:id="@+id/firstFragment"
         android:name="com.example.noteapp.ui.fragments.NoteFragment.NoteFragment"
         android:label="fragment_first"
-        tools:layout="@layout/fragment_first" />
+        tools:layout="@layout/fragment_note" />
 </navigation>
