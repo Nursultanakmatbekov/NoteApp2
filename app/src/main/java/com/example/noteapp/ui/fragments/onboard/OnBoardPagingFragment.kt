@@ -1,4 +1,4 @@
-package com.example.noteapp.ui.fragments.onbord
+package com.example.noteapp.ui.fragments.onboard
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,25 +8,24 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.noteapp.R
-import com.example.noteapp.databinding.FragmentOnBordPagingBinding
+import com.example.noteapp.databinding.FragmentOnBoardPagingBinding
 
 
-class OnBordPagingFragment : Fragment() {
+class OnBoardPagingFragment : Fragment() {
 
-    private lateinit var binding: FragmentOnBordPagingBinding
+    private lateinit var binding: FragmentOnBoardPagingBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentOnBordPagingBinding.inflate(inflater, container, false)
+        binding = FragmentOnBoardPagingBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initialize()
-        textSetOnClick()
     }
 
     private fun initialize() = with(binding) {
@@ -34,29 +33,17 @@ class OnBordPagingFragment : Fragment() {
             0 -> {
                 text2.text = "Очень удобный функционал"
                 lottieFirst.setAnimation(R.raw.lottie1)
-                text3.text = ""
-                text3.isVisible = false
             }
             1 -> {
                 text2.text = "Быстрый, качественый продукт"
                 lottieFirst.setAnimation(R.raw.lottie2)
                 imageRectangle.isVisible = false
-                text3.text = ""
-                text3.isVisible = false
             }
             2 -> {
                 text2.text = "Куча функции и интересных фишек"
                 lottieFirst.setAnimation(R.raw.lottie3)
                 imageRectangle.isVisible = false
-                text3.text = "Начать работу"
-                text3.isVisible = true
             }
-        }
-    }
-
-    private fun textSetOnClick() = with(binding) {
-        text3.setOnClickListener {
-            findNavController().navigate(R.id.action_onBordFragment_to_firstFragment)
         }
     }
 

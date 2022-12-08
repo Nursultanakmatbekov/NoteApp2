@@ -3,27 +3,28 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/firstFragment">
+    app:startDestination="@id/noteFragment">
+
 
     <fragment
-        android:id="@+id/onBordFragment"
-        android:name="com.example.noteapp.ui.fragments.onbord.OnBordFragment"
-        android:label="OnBordFragment" >
+        android:id="@+id/noteFragment"
+        android:name="com.example.noteapp.ui.fragments.noteFragment.NoteFragment"
+        android:label="NoteFragment" />
+    <fragment
+        android:id="@+id/onBoardFragment"
+        android:name="com.example.noteapp.ui.fragments.onboard.OnBoardFragment"
+        android:label="OnBoardFragment" >
         <action
-            android:id="@+id/action_onBordFragment_to_firstFragment"
-            app:destination="@id/firstFragment"
-            app:popUpTo="@id/firstFragment"
-            app:popUpToInclusive="true"/>
+            android:id="@+id/action_onBoardFragment_to_noteFragment"
+            app:destination="@id/noteFragment"
+            app:popUpTo="@id/noteFragment"
+            app:popUpToInclusive="true"/>/>
     </fragment>
-    <fragment
-        android:id="@+id/onBordSecondFragment"
-        android:name="com.example.noteapp.ui.fragments.onbord.OnBordPagingFragment"
-        android:label="OnBordSecondFragment" >
-
-    </fragment>
-    <fragment
-        android:id="@+id/firstFragment"
-        android:name="com.example.noteapp.ui.fragments.NoteFragment.NoteFragment"
-        android:label="fragment_first"
-        tools:layout="@layout/fragment_note" />
+    <navigation android:id="@+id/navigation"
+        app:startDestination="@id/onBoardPagingFragment">
+        <fragment
+            android:id="@+id/onBoardPagingFragment"
+            android:name="com.example.noteapp.ui.fragments.onboard.OnBoardPagingFragment"
+            android:label="OnBoardPagingFragment" />
+    </navigation>
 </navigation>

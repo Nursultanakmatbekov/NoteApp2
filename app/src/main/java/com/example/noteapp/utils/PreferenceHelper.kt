@@ -13,5 +13,5 @@ object PreferenceHelper {
 
     var isShow: Boolean
         get() = sharedPreference.getBoolean("isShow",false)
-        set(w) = sharedPreference.edit().putBoolean("isShow", w).apply()
+        set(value) = sharedPreference.edit().putBoolean("isShow",value).apply()
 }
