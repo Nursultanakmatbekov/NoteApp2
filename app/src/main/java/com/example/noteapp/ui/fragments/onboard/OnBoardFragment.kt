@@ -33,7 +33,6 @@ class OnBoardFragment : Fragment() {
         TabLayoutMediator(binding.tabLayout, binding.viewPager) { it, it2 ->
         }.attach()
         noteFragment()
-        clickText()
     }
 
     private fun initialize() {
@@ -49,26 +48,23 @@ class OnBoardFragment : Fragment() {
                 findNavController().navigate(R.id.action_onBoardFragment_to_noteFragment)
             }
         }
-    }
-
-    private fun clickText() = with(binding) {
-        viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+        binding.viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
                 when (position) {
                     0 -> {
-                        text1.isVisible = true
-                        text3.text = ""
-                        text3.isVisible = false
+                        binding.text1.isVisible = true
+                        binding.text3.text = ""
+                        binding.text3.isVisible = false
                     }
                     1 -> {
-                        text1.isVisible = true
-                        text3.text = ""
-                        text3.isVisible = false
+                        binding.text1.isVisible = true
+                        binding.text3.text = ""
+                        binding.text3.isVisible = false
                     }
                     2 -> {
-                        text1.isVisible = false
-                        text3.text = "Начать работу"
-                        text3.isVisible = true
+                        binding.text1.isVisible = false
+                        binding.text3.text = "Начать работу"
+                        binding.text3.isVisible = true
                     }
                 }
                 super.onPageSelected(position)

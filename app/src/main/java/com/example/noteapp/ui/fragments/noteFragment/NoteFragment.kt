@@ -5,15 +5,39 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
+import com.example.noteapp.App
 import com.example.noteapp.R
+import com.example.noteapp.databinding.FragmentNoteBinding
+import com.example.noteapp.databinding.FragmentOnBoardBinding
 
 class NoteFragment : Fragment() {
+
+    private lateinit var binding: FragmentNoteBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_note, container, false)
+        binding = FragmentNoteBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setUpListener()
+        getData()
+    }
+
+    private fun setUpListener() = with(binding) {
+        actionButton.setOnClickListener{
+            findNavController().navigate(R.id.action_noteFragment_to_noteDetailFragment)
+        }
+    }
+
+    private fun getData() {
+        App.getInstance()?.noteDao()?.getAll()?.observe(viewLifecycleOwner){
+        }
     }
 }
