@@ -26,7 +26,6 @@ class MainActivity : AppCompatActivity() {
             }else ->{
                 navCon.navigate(R.id.onBoardFragment)
             }
-
         }
     }
 }

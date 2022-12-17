@@ -10,9 +10,9 @@
         android:name="com.example.noteapp.ui.fragments.noteFragment.NoteFragment"
         android:label="NoteFragment"
         tools:layout="@layout/fragment_note">
-        <action
-            android:id="@+id/action_noteFragment_to_onBoardFragment"
-            app:destination="@id/onBoardFragment" />
+<!--        <action-->
+<!--            android:id="@+id/action_noteFragment_to_onBoardFragment"-->
+<!--            app:destination="@id/onBoardFragment" />-->
         <action
             android:id="@+id/action_noteFragment_to_noteDetailFragment"
             app:destination="@id/noteDetailFragment" />
@@ -23,9 +23,13 @@
         android:name="com.example.noteapp.ui.fragments.onboard.OnBoardFragment"
         android:label="OnBoardFragment"
         tools:layout="@layout/fragment_on_board">
+<!--        <action-->
+<!--            android:id="@+id/action_onBoardFragment_to_noteFragment"-->
+<!--            app:destination="@id/noteFragment"-->
+<!--       />-->
         <action
-            android:id="@+id/action_onBoardFragment_to_noteFragment"
-            app:destination="@id/noteFragment"
+            android:id="@+id/action_onBoardFragment_to_singUpFragment"
+            app:destination="@id/singUpFragment"
             app:popUpTo="@id/noteFragment"
             app:popUpToInclusive="true"/>
     </fragment>
@@ -41,4 +45,13 @@
         android:name="com.example.noteapp.ui.fragments.noteFragment.detail.NoteDetailFragment"
         android:label="fragment_note_detail"
         tools:layout="@layout/fragment_note_detail" />
+    <fragment
+        android:id="@+id/singUpFragment"
+        android:name="com.example.noteapp.ui.fragments.signup.SingUpFragment"
+        android:label="fragment_sing_up"
+        tools:layout="@layout/fragment_sing_up" >
+        <action
+            android:id="@+id/action_singUpFragment_to_noteFragment"
+            app:destination="@id/noteFragment" />
+    </fragment>
 </navigation>

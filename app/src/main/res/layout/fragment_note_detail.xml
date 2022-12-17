@@ -20,7 +20,6 @@
         android:id="@+id/text_data"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="30 мая"
         android:textSize="20sp"
         android:textColor="@color/white"
         android:layout_marginTop="20dp"
@@ -28,7 +27,8 @@
         app:layout_constraintStart_toEndOf="@+id/im_back"
         app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
+        <TextClock
+            android:id="@+id/text_clock"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="17:21"

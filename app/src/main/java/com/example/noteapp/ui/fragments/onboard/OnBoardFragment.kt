@@ -44,26 +44,23 @@ class OnBoardFragment : Fragment() {
             if (currentItem < 3) {
                 setCurrentItem(currentItem + 1, true)
             }
-            binding.text3.setOnClickListener {
-                findNavController().navigate(R.id.action_onBoardFragment_to_noteFragment)
-            }
+        }
+        binding.text3.setOnClickListener {
+            findNavController().navigate(R.id.action_onBoardFragment_to_singUpFragment)
         }
         binding.viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
                 when (position) {
                     0 -> {
                         binding.text1.isVisible = true
-                        binding.text3.text = ""
                         binding.text3.isVisible = false
                     }
                     1 -> {
                         binding.text1.isVisible = true
-                        binding.text3.text = ""
                         binding.text3.isVisible = false
                     }
                     2 -> {
                         binding.text1.isVisible = false
-                        binding.text3.text = "Начать работу"
                         binding.text3.isVisible = true
                     }
                 }

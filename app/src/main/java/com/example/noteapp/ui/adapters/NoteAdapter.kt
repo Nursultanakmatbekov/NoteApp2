@@ -1,17 +1,26 @@
 package com.example.noteapp.ui.adapters
 
+
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.noteapp.databinding.ItemBinding
+import com.example.noteapp.model.NoteModel
 
-class NoteAdapter : RecyclerView.Adapter<NoteAdapter.ViewHolder>() {
+class NoteAdapter(
+) : RecyclerView.Adapter<NoteAdapter.ViewHolder>() {
 
-    private val list: List<String> = ArrayList()
+    private var list: List<NoteModel> = ArrayList()
 
-    class ViewHolder(private val binding: ItemBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun onBind(s: String) {
-            binding.tvItem.text = s
+    fun setList (list: List<NoteModel>){
+        this.list = list
+        notifyDataSetChanged()
+    }
+
+    inner class ViewHolder(private val binding: ItemBinding) : RecyclerView.ViewHolder(binding.root) {
+        fun onBind(s: NoteModel) {
+            binding.tvItem.text = s.title
+            binding.dataItem.text = s.data
         }
     }
 

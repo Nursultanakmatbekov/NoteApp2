@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0E0C0C"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="30dp"
+    tools:context=".ui.fragments.signup.SingUpFragment">
+
+    <ImageView
+        android:id="@+id/notes_orenge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:src="@drawable/notes_orenge"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Регистрация по номеру"
+        android:textColor="#8E8B8B"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/notes_orenge" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/materialCardView_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:backgroundTint="#191818"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_4"
+        app:strokeColor="@color/white"
+        app:strokeWidth="2dp">
+
+        <EditText
+            android:id="@+id/ed_phone"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:drawableStart="@drawable/ic_phone"
+            android:drawablePadding="15dp"
+            android:hint="Введите номер"
+            android:paddingStart="20dp"
+            android:textColor="#B1B1B1"
+            android:textColorHint="#B1B1B1"
+            app:layout_constraintTop_toBottomOf="@id/text_4" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/materialCardView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#191818"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/materialCardView_1"
+        app:strokeColor="@color/white"
+        app:strokeWidth="2dp">
+
+            <EditText
+            android:id="@+id/ed_code"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:drawableStart="@drawable/ic_baseline_email_24"
+            android:drawablePadding="15dp"
+            android:hint="Введите код"
+            android:paddingStart="20dp"
+            android:textColor="#B1B1B1"
+            android:textColorHint="#B1B1B1"
+            app:layout_constraintTop_toBottomOf="@id/text_4" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <Button
+        android:id="@+id/get_code"
+        android:layout_width="220dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="30dp"
+        android:hint="Получить код"
+        android:textColorHint="@color/white"
+        android:textSize="16sp"
+        app:backgroundTint="#D88B02"
+        app:cornerRadius="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/materialCardView2" />
+
+    <Button
+        android:id="@+id/input_code"
+        android:layout_width="220dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="30dp"
+        android:hint="Подтвердить"
+        android:textColorHint="@color/white"
+        android:textSize="16sp"
+        app:backgroundTint="#D88B02"
+        app:cornerRadius="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/materialCardView2" />
+
+    <TextView
+        android:id="@+id/text_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Отправить снова"
+        android:textColor="#D88B02"
+        android:textSize="16sp"
+        android:layout_marginTop="110dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/materialCardView2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

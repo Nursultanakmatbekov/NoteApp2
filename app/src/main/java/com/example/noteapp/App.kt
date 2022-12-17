@@ -6,30 +6,27 @@ import androidx.room.Room
 import com.example.noteapp.data.db.daos.AppDatabase
 import com.example.noteapp.utils.PreferenceHelper
 
-class App: Application() {
+class App : Application() {
 
     override fun onCreate() {
         super.onCreate()
         context = this
         getInstance()
-        val sharedPreferences = PreferenceHelper
-        sharedPreferences.init(this)
+        PreferenceHelper.init(this)
     }
 
-// Instance room
-    companion object{
-        private var appDatabase: AppDatabase? = null
-        private var context: Context? = null
+    companion object {
+         var appDataBase: AppDatabase? = null
+         var context: Context? = null
 
-        fun getInstance(): AppDatabase?{
-            if (appDatabase == null){
-                appDatabase = context?.let {
-                    Room.databaseBuilder(
-                        it,AppDatabase::class.java,"note.database"
-                    ).fallbackToDestructiveMigration().allowMainThreadQueries().build()
+        fun getInstance(): AppDatabase? {
+            if (appDataBase == null) {
+                appDataBase = context?.let {
+                    Room.databaseBuilder(it, AppDatabase::class.java, "note.database")
+                        .fallbackToDestructiveMigration().allowMainThreadQueries().build()
                 }
             }
-            return appDatabase
+            return appDataBase
         }
     }
 }
